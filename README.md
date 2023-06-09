@@ -11,6 +11,7 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 | LianLi-UNI SL-v1                | `7750`     | Untested                        | ❓           | ❓          |
 | LianLi-UNI SL-v1.8              | `a100`     | Supported                       | ✔️          | ✔️          |
 | LianLi-UNI SL-v2                | `a103`     | Untested                        | ❓           | ❓          |
+| LianLi-UNI SL-Infinity-v1       | `a102`     | Untested                        | ❓           | ❓          |
 | LianLi-UNI AL-v1                | `a101`     | Not Supported                   | ❌          | ❌          |
 | LianLi-UNI AL-v2                | `Unknown`  | Not Supported                   | ❌          | ❌          |
 

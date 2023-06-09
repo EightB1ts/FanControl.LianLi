@@ -17,7 +17,7 @@ namespace FanControl.LianLiPlugin.Controllers
         public bool Locate()
         {
             int[] VENDOR_IDS = { 0x0cf2 };
-            int[] PRODUCT_IDS = { 0xa100, 0xa103, 0x7750 };
+            int[] PRODUCT_IDS = { 0xa100, 0xa102, 0xa103, 0x7750 };
 
             controllers = GetControllers(VENDOR_IDS, PRODUCT_IDS);
 
@@ -67,7 +67,7 @@ namespace FanControl.LianLiPlugin.Controllers
             EnableARGB = enableARGB;
 
             // SL Device
-            if (deviceReg.Pid == 0xa100 || deviceReg.Pid == 0xa103 || deviceReg.Pid == 0xa7750) { DeviceProduct = Product.SL; }
+            if (deviceReg.Pid == 0xa100 || deviceReg.Pid == 0xa102 || deviceReg.Pid == 0xa103 || deviceReg.Pid == 0xa7750) { DeviceProduct = Product.SL; }
             else { DeviceProduct = Product.Unknown; }
             EnableARGB = enableARGB;
 

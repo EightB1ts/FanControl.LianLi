@@ -16,8 +16,8 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 
 ## Installation
 
-1. Download latest release from release page. You will have 2 options once you unzip the file:
-    - **FanControl.LianLiPlugin.ARGB.dll (recommended)**: This will set LED effects to match the MoBo ARGB header.
+1. Download latest [release](https://github.com/EightB1ts/FanControl.LianLi/releases). You will have 2 options once you unzip the file:
+    - **FanControl.LianLiPlugin.ARGB.dll (recommended)**: This will set LED effects to match the motherboard ARGB header.
     - **FanControl.LianLiPlugin.dll**: This will not configure any LED settings.
 
     Please review the [Known Issues](https://github.com/EightB1ts/FanControl.LianLi#known-issues) section to determine which version is right for you.

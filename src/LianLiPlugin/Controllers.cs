@@ -155,16 +155,18 @@ namespace FanControl.LianLiPlugin.Controllers
                 }
 
                 // Check if PWM has been disabled yet or if EnableARGB is enabled
-                if(!DisabledPWM || EnableARGB)
+                if(!DisabledPWM)
                 {
                     // Make sure PWM is disabled.
-                    
-
                     SendConfig(0x40, 0x80, 0xe020, new byte[] { 0x0, 0x31, disable_pwm_offset, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x01 });
+                    DisabledPWM = true;
+                }
+
+                if(EnableARGB)
+                {
                     SendConfig(0x40, 0x80, 0xe021, new byte[] { 0x30, 0x01 });
                     SendCommit(0x40, 0x80, 0xe02f);
-
-                    DisabledPWM = true;
+                    EnableARGB = false;
                 }
                 
                 // Send Fan Speeds & Commit Changes

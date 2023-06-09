@@ -29,6 +29,12 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 
 1. Sharing the controllers across multiple pieces of software at the same time will lead to issues. For example, using this plugin along with OpenRGB. If you want to dynamically change the RGB, please use **FanControl.LianLiPlugin.ARGB.dll** and connect the controller to your motherboard's ARGB header.
 
+## Submitting An Issue
+
+When submitting an issue, please include the Name, VID, and PID of your controller. It can be located within Device Manager:
+
+![Device Manager](https://raw.githubusercontent.com/EightB1ts/FanControl.LianLi/main/images/DeviceManager.PNG)
+
 ## Screenshots
 
 ![Screenshot 1](https://raw.githubusercontent.com/EightB1ts/FanControl.LianLi/main/images/Screenshot1.PNG)

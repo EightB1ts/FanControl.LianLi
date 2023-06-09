@@ -24,11 +24,12 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 
 2. Once you determine which version of the plugin you want to use, drag it into FanControl's `Plugins` folder.
 
+## Known Issues
+
+1. Sharing the controllers across multiple pieces of software at the same time will lead to issues. For example, using this plugin along with OpenRGB. If you want to dynamically change the RGB, please use **FanControl.LianLiPlugin.ARGB.dll** and connect the controller to your motherboard's ARGB header.
+
 ## Screenshots
 
 ![Screenshot 1](https://raw.githubusercontent.com/EightB1ts/FanControl.LianLi/main/images/Screenshot1.PNG)
 
-## Known Issues
-
-1. Sharing the controllers across multiple pieces of software at the same time will lead to issues. For example, using this plugin along with OpenRGB. If you want to dynamically change the RGB, please use **FanControl.LianLiPlugin.ARGB.dll** and connect the controller to your motherboard's ARGB header.
 

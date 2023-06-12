@@ -10,7 +10,7 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 | ------------------------------- | ------------ | ------------------------------- | ------------ | ----------- |
 | LianLi-UNI SL                   | `7750, a100` | Supported                       | ✔️          | ✔️          |
 | LianLi-UNI AL                   | `a101`       | Untested                        | ❓           | ❓          |
-| LianLi-UNI SL-Infinity          | `a102`       | Untested                        | ❓           | ❓          |
+| LianLi-UNI SL-Infinity          | `a102`       | Supported                       | ✔️           | ✔️         |
 | LianLi-UNI SL v2                | `a103, a105` | Untested                        | ❓           | ❓          |
 | LianLi-UNI AL v2                | `a104`       | Untested                        | ❓           | ❓          |
 

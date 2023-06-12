@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FanControl.LianLiPlugin;
+using HidSharp;
 
 namespace LianLi
 {
@@ -25,6 +27,15 @@ namespace LianLi
                 _fancontrollers.Add(new FanController(device, enableARGB));
             }
 
+        }
+
+        // Dispose Fan Controllers
+        public void Dispose()
+        {
+            for (int i = 0; i < _fancontrollers.Count(); i++)
+            {
+                _fancontrollers[i].Dispose();
+            }
         }
 
         public bool FanControllers_Located()
@@ -151,6 +162,11 @@ namespace LianLi
             return (float)BitConverter.ToUInt16(buffer.Skip(1 + fancontroller_channel * 2).Take(2).Reverse().ToArray(), 0);
         }
 
+        public void Dispose()
+        {
+            _device.Dispose();
+        }
+
         private void DisableRPMSync(int fancontroller_channel)
         {
             byte channelByte = (byte)((2 * fancontroller_channel) * 16);
@@ -197,6 +213,8 @@ namespace LianLi
                     break;
             }
         }
+
+        
 
     }
 }

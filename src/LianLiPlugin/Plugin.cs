@@ -1,24 +1,21 @@
 ﻿using FanControl.Plugins;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FanControl.LianLiPlugin
 {
-    public class LianLiPlugin : IPlugin, IDisposable
+    public class LianLiPlugin : IPlugin
     {
         public string Name => "Lian Li";
         private Boolean m_DisposedValue;
         private LianLi.Devices _devices;
         private bool _initialized;
-        private bool enableARGB = true;
+        private bool enableARGB = false;
 
         public void Close()
         {
-
+            // Close all Lian Li Devices
+            _devices.Dispose();
         }
 
         public void Initialize()
@@ -31,6 +28,8 @@ namespace FanControl.LianLiPlugin
         {
             if(_initialized)
             {
+                /** Load Fan Controllers **/
+                // Each Controller consists of 4 Channels - Configure a sensor for each  
                 var controlSensors = new ControlSensors[_devices.FanControllers_Count() * 4];
                 for (int i = 0; i < controlSensors.Count(); i++)
                 {
@@ -43,34 +42,5 @@ namespace FanControl.LianLiPlugin
             }
         }
 
-        protected virtual void Dispose(Boolean disposing)
-        {
-            if (!m_DisposedValue)
-            {
-                if (disposing)
-                {
-                    // TODO: dispose managed state (managed objects)
-                }
-
-                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
-                // TODO: set large fields to null
-                Close();
-                m_DisposedValue = true;
-            }
-        }
-
-        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-        ~LianLiPlugin()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: false);
-        }
-
-        public void Dispose()
-        {
-            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
     }
 }

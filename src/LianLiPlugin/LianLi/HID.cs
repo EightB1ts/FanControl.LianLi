@@ -11,7 +11,6 @@ namespace LianLi
         {
 
             var devices = new List<HIDDevice>();
-
             var locatedDevices = HidSharp.DeviceList.Local.GetHidDevices().ToArray();
 
             foreach (HidSharp.HidDevice device in locatedDevices)
@@ -76,6 +75,11 @@ namespace LianLi
         {
             if (!_stream.CanWrite) { return; }
             _stream.Write(buffer);
+        }
+
+        public void Dispose()
+        {
+            if (_stream != null) { _stream.Dispose(); }
         }
 
     }

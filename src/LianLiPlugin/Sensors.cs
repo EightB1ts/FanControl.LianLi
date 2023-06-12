@@ -9,13 +9,13 @@ namespace FanControl.LianLiPlugin
 {
     public class ControlSensors : IPluginControlSensor
     {
-        private Controllers.Controllers _controllers;
+        private LianLi.Devices _devices;
         private readonly int _controllerIndex;
         private readonly int _channelIndex;
         private float? _val;
 
-        public ControlSensors(Controllers.Controllers controllers, int controllerIndex, int channelIndex) {
-            _controllers = controllers;
+        public ControlSensors(LianLi.Devices devices, int controllerIndex, int channelIndex) {
+            _devices = devices;
             _controllerIndex = controllerIndex;
             _channelIndex = channelIndex;
         }
@@ -36,7 +36,7 @@ namespace FanControl.LianLiPlugin
         {
             if(_val != val)
             {
-                _controllers.SetFanSpeed(_controllerIndex, _channelIndex, val);
+                _devices.FanControllers_SetSpeed(_controllerIndex, _channelIndex, (int)val);
                 _val = val;
             }
         }
@@ -51,13 +51,13 @@ namespace FanControl.LianLiPlugin
     public class Sensors: IPluginSensor
     {
 
-        private Controllers.Controllers _controllers;
+        private LianLi.Devices _devices;
         private readonly int _controllerIndex;
         private readonly int _channelIndex;
 
-        public Sensors(Controllers.Controllers controllers, int controllerIndex, int channelIndex)
+        public Sensors(LianLi.Devices devices, int controllerIndex, int channelIndex)
         {
-            _controllers = controllers;
+            _devices = devices;
             _controllerIndex = controllerIndex;
             _channelIndex = channelIndex;
         }
@@ -74,7 +74,7 @@ namespace FanControl.LianLiPlugin
             + " _Channel_"
             + _channelIndex.ToString();
 
-        public void Update() => Value = _controllers.GetFanSpeed(_controllerIndex, _channelIndex);
+        public void Update() => Value = _devices.FanControllers_GetSpeed(_controllerIndex, _channelIndex);
 
     }
 }

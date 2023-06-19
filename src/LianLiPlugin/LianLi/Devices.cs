@@ -132,30 +132,35 @@ namespace LianLi
 
         public float GetSpeed(int fancontroller_channel)
         {
-           
 
+            int offset = 1;
             byte[] buffer = new byte[65];
-            // Same for all of them. Switch because this may change in the future.
+
             switch (_type)
             {
                 case Type.SL:
+                    offset = 1;
                     buffer = _device.ReadInputReport(224, 65);
                     break;
                 case Type.SLV2:
+                    offset = 2;
                     buffer = _device.ReadInputReport(224, 65);
                     break;
                 case Type.AL:
+                    offset = 1;
                     buffer = _device.ReadInputReport(224, 65);
                     break;
                 case Type.ALV2:
+                    offset = 2;
                     buffer = _device.ReadInputReport(224, 65);
                     break;
                 case Type.SLI:
+                    offset = 1;
                     buffer = _device.ReadInputReport(224, 65);
                     break;
             }
 
-            return (float)BitConverter.ToUInt16(buffer.Skip(1 + fancontroller_channel * 2).Take(2).Reverse().ToArray(), 0);
+            return (float)BitConverter.ToUInt16(buffer.Skip(offset + fancontroller_channel * 2).Take(2).Reverse().ToArray(), 0);
         }
 
         public void Dispose()

@@ -16,9 +16,11 @@ namespace LianLi
             foreach (HidSharp.HidDevice device in locatedDevices)
             {
 
-                var _vid = int.Parse(GetIdentifierPart("vid_", device.DevicePath), System.Globalization.NumberStyles.HexNumber);
-                var _pid = int.Parse(GetIdentifierPart("pid_", device.DevicePath), System.Globalization.NumberStyles.HexNumber);
-                
+                var _vid = 0;
+                var _pid = 0;
+                int.TryParse(GetIdentifierPart("vid_", device.DevicePath), System.Globalization.NumberStyles.HexNumber, null, out _vid);
+                int.TryParse(GetIdentifierPart("pid_", device.DevicePath), System.Globalization.NumberStyles.HexNumber, null, out _pid);
+
                 if (VENDOR_IDS.Contains(_vid) && PRODUCT_IDS.Contains(_pid))
                 {
                     devices.Add(new HIDDevice(

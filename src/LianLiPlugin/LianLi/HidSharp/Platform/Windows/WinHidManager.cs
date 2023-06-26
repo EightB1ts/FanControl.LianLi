@@ -152,7 +152,7 @@ namespace HidSharp.Platform.Windows
 #endif
         protected override void Run(Action readyCallback)
         {
-            const string className = "HidSharpDeviceMonitor";
+            string className = "HidSharpDeviceMonitor" + Guid.NewGuid().ToString("N");
 
             NativeMethods.WindowProc windowProc = DeviceMonitorWindowProc;
             var wc = new NativeMethods.WNDCLASS() { ClassName = className, WindowProc = windowProc };

@@ -9,7 +9,7 @@ An unofficial LianLi plugin for [FanControl](https://github.com/Rem0o/FanControl
 | Device                          | PID          | Status                          | Read Fan RPM | Set Fan RPM |
 | ------------------------------- | ------------ | ------------------------------- | ------------ | ----------- |
 | LianLi-UNI SL                   | `7750, a100` | Supported                       | ✔️           | ✔️         |
-| LianLi-UNI AL                   | `a101`       | Untested                        | ❓           | ❓         |
+| LianLi-UNI AL                   | `a101`       | Supported                       | ✔️           | ✔️         |
 | LianLi-UNI SL-Infinity          | `a102`       | Supported                       | ✔️           | ✔️         |
 | LianLi-UNI SL v2                | `a103, a105` | Supported                       | ✔️           | ✔️         |
 | LianLi-UNI AL v2                | `a104`       | Supported                       | ✔️           | ✔️         |
